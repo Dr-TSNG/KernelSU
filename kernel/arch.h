@@ -57,6 +57,26 @@
 #define SYS_FACCESSAT_SYMBOL "sys_faccessat"
 #endif
 
+#elif defined(__riscv)
+
+#define __PT_PARM1_REG a0
+#define __PT_PARM2_REG a1
+#define __PT_PARM3_REG a2
+#define __PT_SYSCALL_PARM4_REG a3
+#define __PT_CCALL_PARM4_REG a3
+#define __PT_PARM5_REG a4
+#define __PT_PARM6_REG a5
+#define __PT_RET_REG a0
+#define __PT_FP_REG fp
+#define __PT_RC_REG a7
+#define __PT_SP_REG sp
+#define __PT_IP_REG epc
+
+#define PRCTL_SYMBOL "__riscv_sys_prctl"
+#define SYS_READ_SYMBOL "__riscv_sys_read"
+#define SYS_NEWFSTATAT_SYMBOL "__riscv_sys_newfstatat"
+#define SYS_FACCESSAT_SYMBOL "__riscv_sys_faccessat"
+
 #else
 #error "Unsupported arch"
 #endif
